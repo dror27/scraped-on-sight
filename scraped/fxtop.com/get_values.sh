@@ -1,6 +1,0 @@
-curl -s "https://fxtop.com/xml/xml_histo.php?C1=$1&C2=$2&CLIENT=FXTOP&PWD=ForTestOnFxtop.com&DD1=01&MM1=01&YYYY1=2021&DD2=31&MM2=12&YYYY2=2021&MA=1&FORMAT=CSV&button=+Retrieve+historical+rates" \
-	| tail -n +2 \
-	| tr ";" "," \
-	| tr "/" "," \
-	| csvtool cols 2,3,5,7,9 - \
-	| sed 's/^/'$1,$2,'/g'

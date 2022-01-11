@@ -1,0 +1,4 @@
+echo "FROM,TO,MONTH,YEAR,AVG,MIN,MAX"
+./list \
+	| while read p; do echo ./values USD $p; done \
+	| sh
